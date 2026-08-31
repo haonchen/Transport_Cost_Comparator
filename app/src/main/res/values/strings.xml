@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Transport Cost Comparator</string>
+    <string name="welcome_message">Welcome! Calculate and manage your daily transport costs easily.</string>
+    <string-array name="transport_types"><item>Private Vehicle</item><item>Taxi</item><item>Bus</item><item>Train</item><item>Motorcycle</item></string-array>
+</resources>

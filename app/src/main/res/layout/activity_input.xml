@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical">
+    <com.google.android.material.appbar.MaterialToolbar android:id="@+id/toolbar" android:layout_width="match_parent" android:layout_height="?attr/actionBarSize" android:title="Transport Information" />
+    <ScrollView android:layout_width="match_parent" android:layout_height="match_parent"><LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp">
+        <EditText android:id="@+id/etMode" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="Mode of Transport" android:inputType="textCapWords" />
+        <Spinner android:id="@+id/spinnerType" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:contentDescription="Transport Type" />
+        <EditText android:id="@+id/etDistance" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:hint="Distance Travelled per Day (km)" android:inputType="numberDecimal" />
+        <EditText android:id="@+id/etCost" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:hint="Cost per Kilometre (R/km)" android:inputType="numberDecimal" />
+        <EditText android:id="@+id/etDays" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:hint="Travel Days (numeric)" android:inputType="number" />
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:text="Select Travel Date" android:textStyle="bold" />
+        <DatePicker android:id="@+id/datePickerTravelDays" android:layout_width="match_parent" android:layout_height="wrap_content" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:text="If calculations appear incorrect:\n• Verify all input values.\n• Ensure a travel date has been selected.\n• Confirm that distance and cost are numeric values.\n• Save the calculation before viewing reports." />
+        <Button android:id="@+id/btnCalculateSave" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="20dp" android:text="Calculate &amp; Save" />
+        <Button android:id="@+id/btnClear" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="Clear" />
+    </LinearLayout></ScrollView>
+</LinearLayout>
