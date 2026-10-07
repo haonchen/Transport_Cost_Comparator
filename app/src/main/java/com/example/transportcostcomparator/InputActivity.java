@@ -8,7 +8,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 public class InputActivity extends AppCompatActivity {
-    private EditText mode, distance, cost, days;
+    private TextView mode;
+    private EditText distance, cost, days;
     private Spinner type;
     @Override protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState); setContentView(R.layout.activity_input);
@@ -16,11 +17,10 @@ public class InputActivity extends AppCompatActivity {
         mode = findViewById(R.id.etMode); distance = findViewById(R.id.etDistance); cost = findViewById(R.id.etCost); days = findViewById(R.id.etDays); type = findViewById(R.id.spinnerType);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.transport_types, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item); type.setAdapter(adapter);
-        findViewById(R.id.btnClear).setOnClickListener(v -> { mode.setText(""); distance.setText(""); cost.setText(""); days.setText(""); type.setSelection(0); });
+        findViewById(R.id.btnClear).setOnClickListener(v -> { distance.setText(""); cost.setText(""); days.setText(""); type.setSelection(0); });
         findViewById(R.id.btnCalculateSave).setOnClickListener(v -> calculateAndSave());
     }
     private void calculateAndSave() {
-        if (TextUtils.isEmpty(mode.getText().toString().trim())) { mode.setError("Mode of transport is required"); mode.requestFocus(); return; }
         if (TextUtils.isEmpty(distance.getText()) || TextUtils.isEmpty(cost.getText()) || TextUtils.isEmpty(days.getText())) { Toast.makeText(this, "Please complete all numeric fields.", Toast.LENGTH_SHORT).show(); return; }
         try {
             double distanceValue = Double.parseDouble(distance.getText().toString()); double costValue = Double.parseDouble(cost.getText().toString()); int daysValue = Integer.parseInt(days.getText().toString());

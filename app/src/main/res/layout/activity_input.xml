@@ -2,7 +2,15 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical">
     <com.google.android.material.appbar.MaterialToolbar android:id="@+id/toolbar" android:layout_width="match_parent" android:layout_height="?attr/actionBarSize" android:title="Transport Information" />
     <ScrollView android:layout_width="match_parent" android:layout_height="match_parent"><LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp">
-        <EditText android:id="@+id/etMode" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="Mode of Transport" android:inputType="textCapWords" />
+
+        <TextView
+            android:id="@+id/etMode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Mode of Transport"
+            android:textStyle="bold" />
+
         <Spinner android:id="@+id/spinnerType" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:contentDescription="Transport Type" />
         <EditText android:id="@+id/etDistance" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:hint="Distance Travelled per Day (km)" android:inputType="numberDecimal" />
         <EditText android:id="@+id/etCost" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:hint="Cost per Kilometre (R/km)" android:inputType="numberDecimal" />
